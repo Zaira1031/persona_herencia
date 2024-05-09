@@ -19,10 +19,17 @@ namespace persona_herencia
 
         private void guardar_Click(object sender, EventArgs e)
         {
-            // esto se hace de tarea todos los valores
-            // deben de almacenarse en su
-            // caja de memoria correspondiente
-            // usando la clase hija que corresponda
+            if (string.IsNullOrEmpty(nomC.Text)|| string.IsNullOrEmpty(fechaNac.Text) 
+                || string.IsNullOrEmpty(edad.Text)|| string.IsNullOrEmpty(dni.Text)
+                || string.IsNullOrEmpty(carrera.Text))
+                //(Docente.Checked && string.IsNullOrEmpty(sueldo.Text)
+            {
+                MessageBox.Show("Completar los espacios vacios", "Campo incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Guardado con ÉXITO", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void limpiar_Click(object sender, EventArgs e)

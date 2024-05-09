@@ -38,6 +38,7 @@ namespace persona_herencia
             Console.WriteLine($"Nombre: {Nombre}");
             Console.WriteLine($"Edad: {Edad}");
             Console.WriteLine($"Fecha de Nacimiento: {Fechanac}");
+           
         }
     }
 
