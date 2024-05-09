@@ -32,9 +32,9 @@ namespace persona_herencia
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.validar = new System.Windows.Forms.Button();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.docente = new System.Windows.Forms.RadioButton();
+            this.alumno = new System.Windows.Forms.RadioButton();
+            this.empleado = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Salir = new System.Windows.Forms.Button();
             this.limpiar = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@ namespace persona_herencia
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.persona = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,6 +59,7 @@ namespace persona_herencia
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::persona_herencia.Properties.Resources.user;
             this.pictureBox1.Location = new System.Drawing.Point(21, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(159, 140);
@@ -66,58 +68,60 @@ namespace persona_herencia
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.persona);
             this.groupBox1.Controls.Add(this.validar);
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.docente);
+            this.groupBox1.Controls.Add(this.alumno);
+            this.groupBox1.Controls.Add(this.empleado);
             this.groupBox1.Location = new System.Drawing.Point(197, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(139, 139);
+            this.groupBox1.Size = new System.Drawing.Size(139, 152);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
             // validar
             // 
-            this.validar.Location = new System.Drawing.Point(7, 90);
+            this.validar.Location = new System.Drawing.Point(15, 112);
             this.validar.Name = "validar";
-            this.validar.Size = new System.Drawing.Size(95, 43);
+            this.validar.Size = new System.Drawing.Size(85, 36);
             this.validar.TabIndex = 3;
             this.validar.Text = "VALIDAR";
             this.validar.UseVisualStyleBackColor = true;
+            this.validar.Click += new System.EventHandler(this.validar_Click);
             // 
-            // radioButton3
+            // docente
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 66);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(102, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Soy un Docente";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.docente.AutoSize = true;
+            this.docente.Location = new System.Drawing.Point(7, 66);
+            this.docente.Name = "docente";
+            this.docente.Size = new System.Drawing.Size(102, 17);
+            this.docente.TabIndex = 2;
+            this.docente.Text = "Soy un Docente";
+            this.docente.UseVisualStyleBackColor = true;
+            this.docente.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
-            // radioButton2
+            // alumno
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 43);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(95, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Soy un alumno";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.alumno.AutoSize = true;
+            this.alumno.Location = new System.Drawing.Point(7, 43);
+            this.alumno.Name = "alumno";
+            this.alumno.Size = new System.Drawing.Size(95, 17);
+            this.alumno.TabIndex = 1;
+            this.alumno.Text = "Soy un alumno";
+            this.alumno.UseVisualStyleBackColor = true;
+            this.alumno.CheckedChanged += new System.EventHandler(this.alumno_CheckedChanged);
             // 
-            // radioButton1
+            // empleado
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(107, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Soy un empleado";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.empleado.AutoSize = true;
+            this.empleado.Location = new System.Drawing.Point(7, 20);
+            this.empleado.Name = "empleado";
+            this.empleado.Size = new System.Drawing.Size(107, 17);
+            this.empleado.TabIndex = 0;
+            this.empleado.Text = "Soy un empleado";
+            this.empleado.UseVisualStyleBackColor = true;
+            this.empleado.CheckedChanged += new System.EventHandler(this.empleado_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -221,7 +225,7 @@ namespace persona_herencia
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 148);
+            this.label6.Location = new System.Drawing.Point(28, 160);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 5;
@@ -230,7 +234,7 @@ namespace persona_herencia
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 122);
+            this.label5.Location = new System.Drawing.Point(14, 134);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(108, 13);
             this.label5.TabIndex = 4;
@@ -239,7 +243,7 @@ namespace persona_herencia
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 97);
+            this.label4.Location = new System.Drawing.Point(14, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 3;
@@ -248,7 +252,7 @@ namespace persona_herencia
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 49);
+            this.label3.Location = new System.Drawing.Point(14, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 13);
             this.label3.TabIndex = 2;
@@ -257,7 +261,7 @@ namespace persona_herencia
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 25);
+            this.label2.Location = new System.Drawing.Point(6, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 13);
             this.label2.TabIndex = 1;
@@ -266,11 +270,21 @@ namespace persona_herencia
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 72);
+            this.label1.Location = new System.Drawing.Point(14, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "EDAD";
+            // 
+            // persona
+            // 
+            this.persona.AutoSize = true;
+            this.persona.Location = new System.Drawing.Point(7, 89);
+            this.persona.Name = "persona";
+            this.persona.Size = new System.Drawing.Size(106, 17);
+            this.persona.TabIndex = 4;
+            this.persona.Text = "Soy una Persona";
+            this.persona.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -296,9 +310,9 @@ namespace persona_herencia
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button validar;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton docente;
+        private System.Windows.Forms.RadioButton alumno;
+        private System.Windows.Forms.RadioButton empleado;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button Salir;
         private System.Windows.Forms.Button limpiar;
@@ -315,6 +329,7 @@ namespace persona_herencia
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton persona;
     }
 }
 

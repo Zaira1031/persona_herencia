@@ -29,14 +29,6 @@ namespace persona_herencia
             set { edad = value; } // se guarda en la memoria
         }
        
-        
-        public void MostrarInformacionPersona()
-        {
-            Console.WriteLine($"Nombre: {Nombre}");
-            Console.WriteLine($"Edad: {Edad}");
-            Console.WriteLine($"Fecha de Nacimiento: {Fechanac}");
-           
-        }
     }
 
     class Alumno :Persona //clase hija alumno
@@ -51,12 +43,6 @@ namespace persona_herencia
         {
             get { return carrera; } //vamos por el valor de la caja de texto (OBTIENE)
             set { carrera = value; } // se guarda en la memoria
-        }
-
-        public void MostrarInformacionAlumno()
-        {
-            Console.WriteLine($"Matricula: {Matricula}");
-            Console.WriteLine($"Carrera: {Carrera}");
         }
         
     }
@@ -78,12 +64,7 @@ namespace persona_herencia
             get { return sueldo; } //vamos por el valor de la caja de texto (OBTIENE)
             set { sueldo = value; } // se guarda en la memoria
         }
-        public void MostrarInformacionEmpleado()
-        {
-            Console.WriteLine($"Carrera: {Carrera}");
-            Console.WriteLine($"Sueldo: {Sueldo}");
-        }
-        ¿
+        
     }
 
     class Docente : Persona //clase Hija
@@ -98,11 +79,6 @@ namespace persona_herencia
         {
             get { return sueldo; } //vamos por el valor de la caja de texto (OBTIENE)
             set { sueldo = value; } // se guarda en la memoria
-        }
-        public void MostrarInformacionEmpleado()
-        {
-            Console.WriteLine($"Matricula: {Matricula}");
-            Console.WriteLine($"Sueldo: {Sueldo}");
         }
         
     }

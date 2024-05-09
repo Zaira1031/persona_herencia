@@ -20,19 +20,23 @@ namespace persona_herencia
         private void guardar_Click(object sender, EventArgs e)
         {
             // Se comprueba si alguno de los campos de texto está vacío o nulo.
-            if (string.IsNullOrEmpty(nomC.Text) || string.IsNullOrEmpty(fechaNac.Text)
-                || string.IsNullOrEmpty(edad.Text) || string.IsNullOrEmpty(dni.Text)
-                || string.IsNullOrEmpty(carrera.Text))
-            //(Docente.Checked && string.IsNullOrEmpty(sueldo.Text)*
-            {
-                // Si hay algún campo vacío, se muestra un mensaje de error.
-                MessageBox.Show("Completar los espacios vacíos", "Campo incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                // Si todos los campos están llenos, se muestra un mensaje de éxito.
-                MessageBox.Show("Guardado con ÉXITO", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+             if (string.IsNullOrEmpty(nomC.Text) || string.IsNullOrEmpty(fechaNac.Text)
+                 || string.IsNullOrEmpty(edad.Text) || string.IsNullOrEmpty(dni.Text)
+                 || string.IsNullOrEmpty(carrera.Text)||
+                 (docente.Checked && string.IsNullOrEmpty(sueldo.Text)||
+                 (empleado.Checked && string.IsNullOrEmpty(sueldo.Text))))
+
+             {
+                 // Si hay algún campo vacío, se muestra un mensaje de error.
+                 MessageBox.Show("Completar los espacios vacíos", "Campo incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+             else
+             {
+                 // Si todos los campos están llenos, se muestra un mensaje de éxito.
+                 MessageBox.Show("Guardado con ÉXITO", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             }
+            // Si todos los campos están llenos, se muestra un mensaje de éxito.
+           // MessageBox.Show("Guardado con ÉXITO", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void limpiar_Click(object sender, EventArgs e)
@@ -76,6 +80,45 @@ namespace persona_herencia
         private void edad_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            label6.Visible = true;
+            sueldo.Visible = true;
+        }
+
+        private void alumno_CheckedChanged(object sender, EventArgs e)
+        {
+            label6.Visible = false;
+            sueldo.Visible = false;
+        }
+
+        private void empleado_CheckedChanged(object sender, EventArgs e)
+        {
+            label6.Visible = true;
+            sueldo.Visible = true;
+        }
+
+        private void validar_Click(object sender, EventArgs e)
+        {
+            if (empleado.Checked)
+            {
+                Empleado empleado1 = new Empleado();
+
+            }
+            else if (alumno.Checked)
+            {
+                Alumno alumno1 = new Alumno();
+            }
+            else if (docente.Checked)
+            {
+                Docente docente1 = new Docente();
+            }
+            else if (persona.Checked)
+            {
+                Persona persona1 = new Persona();
+            }
         }
     }
 }
