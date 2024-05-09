@@ -29,10 +29,7 @@ namespace persona_herencia
             set { edad = value; } // se guarda en la memoria
         }
        
-        // Método para mostrar información de la persona 
-        //atributos
-        //metodos
-        //nombre, edad, fecha de nacimiento(es un tipo cadena!!!!! string)
+        
         public void MostrarInformacionPersona()
         {
             Console.WriteLine($"Nombre: {Nombre}");
@@ -61,11 +58,7 @@ namespace persona_herencia
             Console.WriteLine($"Matricula: {Matricula}");
             Console.WriteLine($"Carrera: {Carrera}");
         }
-        //variables
-        //atributos
-        //metodos
-        //colocar todos los comentarios necesarios para exlicar
-        //el funcinamiento de su código
+        
     }
     class Empleado : Persona //clase hija
     {
@@ -90,11 +83,7 @@ namespace persona_herencia
             Console.WriteLine($"Carrera: {Carrera}");
             Console.WriteLine($"Sueldo: {Sueldo}");
         }
-        //variables
-        //atributos
-        //metodos
-        //colocar todos los comentarios necesarios para exlicar
-        //el funcinamiento de su código
+        ¿
     }
 
     class Docente : Persona //clase Hija
@@ -115,11 +104,7 @@ namespace persona_herencia
             Console.WriteLine($"Matricula: {Matricula}");
             Console.WriteLine($"Sueldo: {Sueldo}");
         }
-        //variables
-        //atributos
-        //metodos
-        //colocar todos los comentarios necesarios para exlicar
-        //el funcinamiento de su código
+        
     }
     static class Program
     {

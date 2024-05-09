@@ -19,34 +19,48 @@ namespace persona_herencia
 
         private void guardar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(nomC.Text)|| string.IsNullOrEmpty(fechaNac.Text) 
-                || string.IsNullOrEmpty(edad.Text)|| string.IsNullOrEmpty(dni.Text)
+            // Se comprueba si alguno de los campos de texto está vacío o nulo.
+            if (string.IsNullOrEmpty(nomC.Text) || string.IsNullOrEmpty(fechaNac.Text)
+                || string.IsNullOrEmpty(edad.Text) || string.IsNullOrEmpty(dni.Text)
                 || string.IsNullOrEmpty(carrera.Text))
-                //(Docente.Checked && string.IsNullOrEmpty(sueldo.Text)
+            //(Docente.Checked && string.IsNullOrEmpty(sueldo.Text)*
             {
-                MessageBox.Show("Completar los espacios vacios", "Campo incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Si hay algún campo vacío, se muestra un mensaje de error.
+                MessageBox.Show("Completar los espacios vacíos", "Campo incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
+                // Si todos los campos están llenos, se muestra un mensaje de éxito.
                 MessageBox.Show("Guardado con ÉXITO", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void limpiar_Click(object sender, EventArgs e)
         {
-             nomC.Clear();
+            // Borra el contenido del control 'nomC', e un campo de entrada de texto.
+            nomC.Clear();
+
+            // Borra el contenido del control 'fechaNac',  campo de entrada de texto para la fecha de nacimiento.
             fechaNac.Clear();
+
+            // Borra el contenido del control 'edad',  campo de entrada de texto para la edad.
             edad.Clear();
+
+            // Borra el contenido del control 'dni',  campo de entrada de texto para el número de identificación.
             dni.Clear();
+
+            // Borra el contenido del control 'carrera',  campo de entrada de texto para la carrera o profesión.
             carrera.Clear();
+
+            // Borra el contenido del control 'sueldo',  campo de entrada de texto para el sueldo.
             sueldo.Clear();
         }
 
         private void Salir_Click(object sender, EventArgs e)
         {
+            // La función Application.Exit() cierra la aplicación actual.
             Application.Exit();
-            // se hace de tarea
-            // debe de terminar la ejecucion de la interfaz
+
         }
 
         private void nomC_TextChanged(object sender, EventArgs e)
