@@ -32,12 +32,7 @@ namespace persona_herencia
         //atributos
         //metodos
         //nombre, edad, fecha de nacimiento(es un tipo cadena!!!!! string)
-        public void MostrarInformacion()
-        {
-            Console.WriteLine($"Nombre: {Nombre}");
-            Console.WriteLine($"Edad: {Edad}");
-            Console.WriteLine($"Fecha de Nacimiento: {Fechanac}");
-        }
+      
     }
 
     class Alumno :Persona //clase hija alumno
