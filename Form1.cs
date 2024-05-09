@@ -27,12 +27,17 @@ namespace persona_herencia
 
         private void limpiar_Click(object sender, EventArgs e)
         {
-            // se hace de tarea
-            // debe de borrar las cajas de texto
+             nomC.Clear();
+            fechaNac.Clear();
+            edad.Clear();
+            dni.Clear();
+            carrera.Clear();
+            sueldo.Clear();
         }
 
         private void Salir_Click(object sender, EventArgs e)
         {
+            Application.Exit();
             // se hace de tarea
             // debe de terminar la ejecucion de la interfaz
         }
@@ -43,6 +48,11 @@ namespace persona_herencia
         }
 
         private void fechaNac_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void edad_TextChanged(object sender, EventArgs e)
         {
 
         }

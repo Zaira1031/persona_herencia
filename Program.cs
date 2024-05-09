@@ -28,11 +28,17 @@ namespace persona_herencia
             get { return edad; } //vamos por el valor de la caja de texto (OBTIENE)
             set { edad = value; } // se guarda en la memoria
         }
+       
         // Método para mostrar información de la persona 
         //atributos
         //metodos
         //nombre, edad, fecha de nacimiento(es un tipo cadena!!!!! string)
-      
+        public void MostrarInformacionPersona()
+        {
+            Console.WriteLine($"Nombre: {Nombre}");
+            Console.WriteLine($"Edad: {Edad}");
+            Console.WriteLine($"Fecha de Nacimiento: {Fechanac}");
+        }
     }
 
     class Alumno :Persona //clase hija alumno
@@ -49,6 +55,11 @@ namespace persona_herencia
             set { carrera = value; } // se guarda en la memoria
         }
 
+        public void MostrarInformacionAlumno()
+        {
+            Console.WriteLine($"Matricula: {Matricula}");
+            Console.WriteLine($"Carrera: {Carrera}");
+        }
         //variables
         //atributos
         //metodos
@@ -73,6 +84,11 @@ namespace persona_herencia
             get { return sueldo; } //vamos por el valor de la caja de texto (OBTIENE)
             set { sueldo = value; } // se guarda en la memoria
         }
+        public void MostrarInformacionEmpleado()
+        {
+            Console.WriteLine($"Carrera: {Carrera}");
+            Console.WriteLine($"Sueldo: {Sueldo}");
+        }
         //variables
         //atributos
         //metodos
@@ -92,6 +108,11 @@ namespace persona_herencia
         {
             get { return sueldo; } //vamos por el valor de la caja de texto (OBTIENE)
             set { sueldo = value; } // se guarda en la memoria
+        }
+        public void MostrarInformacionEmpleado()
+        {
+            Console.WriteLine($"Matricula: {Matricula}");
+            Console.WriteLine($"Sueldo: {Sueldo}");
         }
         //variables
         //atributos

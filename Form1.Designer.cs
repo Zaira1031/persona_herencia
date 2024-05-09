@@ -200,6 +200,7 @@ namespace persona_herencia
             this.edad.Name = "edad";
             this.edad.Size = new System.Drawing.Size(100, 20);
             this.edad.TabIndex = 8;
+            this.edad.TextChanged += new System.EventHandler(this.edad_TextChanged);
             // 
             // fechaNac
             // 
