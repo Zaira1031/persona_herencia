@@ -21,10 +21,10 @@ namespace persona_herencia
         {
             // Se comprueba si alguno de los campos de texto está vacío o nulo.
              if (string.IsNullOrEmpty(nomC.Text) || string.IsNullOrEmpty(fechaNac.Text)
-                 || string.IsNullOrEmpty(edad.Text) || string.IsNullOrEmpty(dni.Text)
-                 || string.IsNullOrEmpty(carrera.Text)||
-                 (docente.Checked && string.IsNullOrEmpty(sueldo.Text)||
-                 (empleado.Checked && string.IsNullOrEmpty(sueldo.Text))))
+                 || string.IsNullOrEmpty(edadT.Text) || string.IsNullOrEmpty(dni.Text)
+                 || string.IsNullOrEmpty(carreraT.Text)||
+                 (docente.Checked && string.IsNullOrEmpty(sueldoT.Text)||
+                 (empleado.Checked && string.IsNullOrEmpty(sueldoT.Text))))
 
              {
                  // Si hay algún campo vacío, se muestra un mensaje de error.
@@ -48,16 +48,16 @@ namespace persona_herencia
             fechaNac.Clear();
 
             // Borra el contenido del control 'edad',  campo de entrada de texto para la edad.
-            edad.Clear();
+            edadT.Clear();
 
             // Borra el contenido del control 'dni',  campo de entrada de texto para el número de identificación.
             dni.Clear();
 
             // Borra el contenido del control 'carrera',  campo de entrada de texto para la carrera o profesión.
-            carrera.Clear();
+            carreraT.Clear();
 
             // Borra el contenido del control 'sueldo',  campo de entrada de texto para el sueldo.
-            sueldo.Clear();
+            sueldoT.Clear();
         }
 
         private void Salir_Click(object sender, EventArgs e)
@@ -85,40 +85,65 @@ namespace persona_herencia
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             label6.Visible = true;
-            sueldo.Visible = true;
+            sueldoT.Visible = true;
         }
 
         private void alumno_CheckedChanged(object sender, EventArgs e)
         {
             label6.Visible = false;
-            sueldo.Visible = false;
+            sueldoT.Visible = false;
         }
 
         private void empleado_CheckedChanged(object sender, EventArgs e)
         {
             label6.Visible = true;
-            sueldo.Visible = true;
+            sueldoT.Visible = true;
         }
 
         private void validar_Click(object sender, EventArgs e)
         {
             if (empleado.Checked)
             {
-                Empleado empleado1 = new Empleado();
+                string nom = nomC.Text;
+                string fech = fechaNac.Text;
+                int edad = Convert.ToInt32(edadT.Text);
+                int mat = Convert.ToInt32(dni.Text);
+                string puesto = carreraT.Text;
+                float sueldo = Convert.ToSingle(sueldoT.Text);
+                Empleado empleado = new Empleado(nom, edad, fech, puesto, sueldo);
 
             }
             else if (alumno.Checked)
             {
-                Alumno alumno1 = new Alumno();
+                string nom = nomC.Text;
+                string fech = fechaNac.Text;
+                int edad = Convert.ToInt32(edadT.Text);
+                int mat = Convert.ToInt32(dni.Text);
+                string carrera = carreraT.Text;
+                float sueldo = Convert.ToSingle(sueldoT.Text);
+                Alumno alumno = new Alumno(nom, edad, fech, carrera, mat);
             }
             else if (docente.Checked)
             {
-                Docente docente1 = new Docente();
+                string nom = nomC.Text;
+                string fech = fechaNac.Text;
+                int edad = Convert.ToInt32(edadT.Text);
+                int mat = Convert.ToInt32(dni.Text);
+                string puesto = carreraT.Text;
+                float sueldo = Convert.ToSingle(sueldoT.Text);
+                Docente docente = new Docente(nom, edad, fech, puesto, sueldo);
             }
-            else if (persona.Checked)
+            else
             {
-                Persona persona1 = new Persona();
+                string nom = nomC.Text;
+                string fech = fechaNac.Text;
+                int edad = Convert.ToInt32(edadT.Text);
             }
+        }
+
+        private void carreraT_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

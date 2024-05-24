@@ -31,6 +31,7 @@ namespace persona_herencia
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.persona = new System.Windows.Forms.RadioButton();
             this.validar = new System.Windows.Forms.Button();
             this.docente = new System.Windows.Forms.RadioButton();
             this.alumno = new System.Windows.Forms.RadioButton();
@@ -39,10 +40,10 @@ namespace persona_herencia
             this.Salir = new System.Windows.Forms.Button();
             this.limpiar = new System.Windows.Forms.Button();
             this.guardar = new System.Windows.Forms.Button();
-            this.sueldo = new System.Windows.Forms.TextBox();
-            this.carrera = new System.Windows.Forms.TextBox();
+            this.sueldoT = new System.Windows.Forms.TextBox();
+            this.carreraT = new System.Windows.Forms.TextBox();
             this.dni = new System.Windows.Forms.TextBox();
-            this.edad = new System.Windows.Forms.TextBox();
+            this.edadT = new System.Windows.Forms.TextBox();
             this.fechaNac = new System.Windows.Forms.TextBox();
             this.nomC = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace persona_herencia
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.persona = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,6 +79,16 @@ namespace persona_herencia
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // persona
+            // 
+            this.persona.AutoSize = true;
+            this.persona.Location = new System.Drawing.Point(7, 89);
+            this.persona.Name = "persona";
+            this.persona.Size = new System.Drawing.Size(106, 17);
+            this.persona.TabIndex = 4;
+            this.persona.Text = "Soy una Persona";
+            this.persona.UseVisualStyleBackColor = true;
             // 
             // validar
             // 
@@ -128,10 +138,10 @@ namespace persona_herencia
             this.groupBox2.Controls.Add(this.Salir);
             this.groupBox2.Controls.Add(this.limpiar);
             this.groupBox2.Controls.Add(this.guardar);
-            this.groupBox2.Controls.Add(this.sueldo);
-            this.groupBox2.Controls.Add(this.carrera);
+            this.groupBox2.Controls.Add(this.sueldoT);
+            this.groupBox2.Controls.Add(this.carreraT);
             this.groupBox2.Controls.Add(this.dni);
-            this.groupBox2.Controls.Add(this.edad);
+            this.groupBox2.Controls.Add(this.edadT);
             this.groupBox2.Controls.Add(this.fechaNac);
             this.groupBox2.Controls.Add(this.nomC);
             this.groupBox2.Controls.Add(this.label6);
@@ -177,19 +187,20 @@ namespace persona_herencia
             this.guardar.UseVisualStyleBackColor = true;
             this.guardar.Click += new System.EventHandler(this.guardar_Click);
             // 
-            // sueldo
+            // sueldoT
             // 
-            this.sueldo.Location = new System.Drawing.Point(176, 153);
-            this.sueldo.Name = "sueldo";
-            this.sueldo.Size = new System.Drawing.Size(100, 20);
-            this.sueldo.TabIndex = 11;
+            this.sueldoT.Location = new System.Drawing.Point(176, 153);
+            this.sueldoT.Name = "sueldoT";
+            this.sueldoT.Size = new System.Drawing.Size(100, 20);
+            this.sueldoT.TabIndex = 11;
             // 
-            // carrera
+            // carreraT
             // 
-            this.carrera.Location = new System.Drawing.Point(176, 127);
-            this.carrera.Name = "carrera";
-            this.carrera.Size = new System.Drawing.Size(100, 20);
-            this.carrera.TabIndex = 10;
+            this.carreraT.Location = new System.Drawing.Point(176, 127);
+            this.carreraT.Name = "carreraT";
+            this.carreraT.Size = new System.Drawing.Size(100, 20);
+            this.carreraT.TabIndex = 10;
+            this.carreraT.TextChanged += new System.EventHandler(this.carreraT_TextChanged);
             // 
             // dni
             // 
@@ -198,13 +209,13 @@ namespace persona_herencia
             this.dni.Size = new System.Drawing.Size(100, 20);
             this.dni.TabIndex = 9;
             // 
-            // edad
+            // edadT
             // 
-            this.edad.Location = new System.Drawing.Point(176, 75);
-            this.edad.Name = "edad";
-            this.edad.Size = new System.Drawing.Size(100, 20);
-            this.edad.TabIndex = 8;
-            this.edad.TextChanged += new System.EventHandler(this.edad_TextChanged);
+            this.edadT.Location = new System.Drawing.Point(176, 75);
+            this.edadT.Name = "edadT";
+            this.edadT.Size = new System.Drawing.Size(100, 20);
+            this.edadT.TabIndex = 8;
+            this.edadT.TextChanged += new System.EventHandler(this.edad_TextChanged);
             // 
             // fechaNac
             // 
@@ -276,16 +287,6 @@ namespace persona_herencia
             this.label1.TabIndex = 0;
             this.label1.Text = "EDAD";
             // 
-            // persona
-            // 
-            this.persona.AutoSize = true;
-            this.persona.Location = new System.Drawing.Point(7, 89);
-            this.persona.Name = "persona";
-            this.persona.Size = new System.Drawing.Size(106, 17);
-            this.persona.TabIndex = 4;
-            this.persona.Text = "Soy una Persona";
-            this.persona.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,10 +318,10 @@ namespace persona_herencia
         private System.Windows.Forms.Button Salir;
         private System.Windows.Forms.Button limpiar;
         private System.Windows.Forms.Button guardar;
-        private System.Windows.Forms.TextBox sueldo;
-        private System.Windows.Forms.TextBox carrera;
+        private System.Windows.Forms.TextBox sueldoT;
+        private System.Windows.Forms.TextBox carreraT;
         private System.Windows.Forms.TextBox dni;
-        private System.Windows.Forms.TextBox edad;
+        private System.Windows.Forms.TextBox edadT;
         private System.Windows.Forms.TextBox fechaNac;
         private System.Windows.Forms.TextBox nomC;
         private System.Windows.Forms.Label label6;
