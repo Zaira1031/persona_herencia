@@ -29,7 +29,6 @@ namespace persona_herencia
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.persona = new System.Windows.Forms.RadioButton();
@@ -60,7 +59,7 @@ namespace persona_herencia
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(21, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(159, 140);
@@ -91,6 +90,7 @@ namespace persona_herencia
             this.persona.TabIndex = 4;
             this.persona.Text = "Soy una Persona";
             this.persona.UseVisualStyleBackColor = true;
+            this.persona.CheckedChanged += new System.EventHandler(this.persona_CheckedChanged);
             // 
             // validar
             // 
@@ -195,6 +195,7 @@ namespace persona_herencia
             this.sueldoT.Name = "sueldoT";
             this.sueldoT.Size = new System.Drawing.Size(100, 20);
             this.sueldoT.TabIndex = 11;
+            this.sueldoT.TextChanged += new System.EventHandler(this.sueldoT_TextChanged);
             // 
             // carreraT
             // 
