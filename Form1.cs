@@ -34,6 +34,9 @@ namespace persona_herencia
             {
                 // Si todos los campos están llenos, se muestra un mensaje de éxito.
                 MessageBox.Show("Guardado con ÉXITO", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
+                
+
             }
             // Si todos los campos están llenos, se muestra un mensaje de éxito.
             // MessageBox.Show("Guardado con ÉXITO", "Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -41,6 +44,11 @@ namespace persona_herencia
             {
                 MessageBox.Show("DATOS GUARDOS" + "\nNombre: " + nomC.Text + "\nFecha de Nac: " + fechaNac.Text
                 + "\nEdad: " + edadT.Text + "\nMatricula: " + dni.Text + "\nCarrera: " + carreraT.Text);
+                string nom = nomC.Text;
+                string fecha = fechaNac.Text;
+                string edad = edadT.Text;
+                string matricula = dni.Text;
+                string carrera = carreraT.Text;
             }
             else
             {
@@ -55,7 +63,9 @@ namespace persona_herencia
                     MessageBox.Show("DATOS GUARDOS" + "\nNombre: " + nomC.Text + "\nFecha de Nac: " + fechaNac.Text
                      + "\nEdad: " + edadT.Text);
                 }
+
             }
+            
         }
         private void limpiar_Click(object sender, EventArgs e)
         {
@@ -131,10 +141,10 @@ namespace persona_herencia
                 string nom = nomC.Text;
                 string fech = fechaNac.Text;
                 int edad = Convert.ToInt32(edadT.Text);
-                int mat = Convert.ToInt32(dni.Text);
+                string mat = dni.Text;
                 string puesto = carreraT.Text;
                 float sueldo = Convert.ToSingle(sueldoT.Text);
-                Empleado empleado = new Empleado(nom, edad, fech, puesto, sueldo);
+                Empleado empleado = new Empleado(nom, edad, fech, puesto, sueldo, mat);
 
             }
             else if (alumno.Checked)
@@ -152,10 +162,10 @@ namespace persona_herencia
                 string nom = nomC.Text;
                 string fech = fechaNac.Text;
                 int edad = Convert.ToInt32(edadT.Text);
-                int mat = Convert.ToInt32(dni.Text);
+                string mat = dni.Text;
                 string puesto = carreraT.Text;
                 float sueldo = Convert.ToSingle(sueldoT.Text);
-                Docente docente = new Docente(nom, edad, fech, puesto, sueldo);
+                Docente docente = new Docente(nom, edad, fech, puesto, sueldo, mat);
             }
             else
             {

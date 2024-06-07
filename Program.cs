@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace persona_herencia
 {
@@ -35,6 +36,7 @@ namespace persona_herencia
              Edad = edad;
              Fechanac = fechanac;
          }*/
+        
 
     }
 
@@ -60,12 +62,39 @@ namespace persona_herencia
             Carrera = carrera;
             Matricula = matricula;
         }
+        public void Guardar_info()
+        {
+            try
+            {
+                string fileName = @"C:\Users\carlo\Desktop\Proyecto_P2-main\RegistroAlumnos\Archivos.txt";
+                StreamWriter writer = File.AppendText(fileName);
+                writer.WriteLine("Nombre: " + Nombre);
+                writer.WriteLine("Edad: " + Edad);
+                writer.WriteLine("Fecha Nacimiento: " + Fechanac);
+                writer.WriteLine("Carrera: " + Carrera);
+                writer.WriteLine("Matricula: " + Matricula);
+                writer.WriteLine("\n" );
+                writer.Close();
+            }
+            catch 
+            {
+
+                MessageBox.Show("ERROR AL GUARDAR DARTOS EN EL ARCHIVO: RegistrosAlumnos.TXT", "ERROR"
+                 , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
     class Empleado : Persona //clase hija
     {
+        protected string dni;
         protected float sueldo;
         protected string puesto;
-       
+        
+        public string Dni
+        {
+            get { return dni; } //vamos por el valor de la caja de texto (OBTIENE)
+            set { dni = value; } // se guarda en la memoria
+        }
         public string Puesto
         {
             get { return puesto; } //vamos por el valor de la caja de texto (OBTIENE)
@@ -76,22 +105,52 @@ namespace persona_herencia
             get { return sueldo; } //vamos por el valor de la caja de texto (OBTIENE)
             set { sueldo = value; } // se guarda en la memoria
         }
-        public Empleado(string nombre, int edad, string fechanac, string puesto, float sueldo)
+        
+        public Empleado(string nombre, int edad, string fechanac, string puesto, float sueldo, string dni)
         {
             Nombre = nombre;
             Edad = edad;
+            Dni = dni;
             Fechanac = fechanac;
             Puesto = puesto;
             Sueldo = sueldo;
+           
         }
+        public void Guardar_info()
+        {
+            try
+            {
+                string fileName = @"C:/Users/carlo/Desktop/Proyecto_P2 - main/RegistrosAlumnos/ ArchivosEmpleado.txt";
+                StreamWriter writer = File.AppendText(fileName);
+                writer.WriteLine("Nombre: " + Nombre);
+                writer.WriteLine("Edad: " + Edad);
+                writer.WriteLine("Fecha Nacimiento: " + Fechanac);
+                writer.WriteLine("DNI: " + Dni);
+                writer.WriteLine("Puesto: " + Puesto);
+                writer.WriteLine("Sueldo: " + Sueldo);
+                writer.WriteLine("\n");
+                writer.Close();
+            }
+            catch
+            {
 
+                MessageBox.Show("ERROR AL GUARDAR DARTOS EN EL ARCHIVO: RegistrosAlumnos.TXT", "ERROR"
+                 , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
     class Docente : Persona //clase Hija
     {
+        protected string dni;
         protected float sueldo;
         protected string puesto;
 
+        public string Dni
+        {
+            get { return dni; } //vamos por el valor de la caja de texto (OBTIENE)
+            set { dni = value; } // se guarda en la memoria
+        }
         public float Sueldo
         {
             get { return sueldo; } //vamos por el valor de la caja de texto (OBTIENE)
@@ -103,15 +162,39 @@ namespace persona_herencia
                                    //de la caja de texto
             set { puesto = value; }//lo guardamos en memoria
         }
-        public Docente(string nombre, int edad, string fechanac, string puesto, float sueldo)
+        public Docente(string nombre, int edad, string fechanac, string puesto, float sueldo, string dni)
         {
             Nombre = nombre;
             Edad = edad;
+            Dni = dni;
             Fechanac = fechanac;
             Puesto = puesto;
             Sueldo = sueldo;
         }
+        public void Guardar_info()
+        {
+            try
+            {
+                string fileName = @"C:/Users/carlo/Desktop/Proyecto_P2 - main/RegistrosAlumnos/ ArchivosDocente.txt";
+                StreamWriter writer = File.AppendText(fileName);
+                writer.WriteLine("Nombre: " + Nombre);
+                writer.WriteLine("Edad: " + Edad);
+                writer.WriteLine("Fecha Nacimiento: " + Fechanac);
+                writer.WriteLine("DNI: " + Dni);
+                writer.WriteLine("Puesto: " + Puesto);
+                writer.WriteLine("Sueldo: " + Sueldo);
+                writer.WriteLine("\n");
+                writer.Close();
+            }
+            catch
+            {
+
+                MessageBox.Show("ERROR AL GUARDAR DARTOS EN EL ARCHIVO: RegistrosAlumnos.TXT", "ERROR"
+                 , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
+    
     static class Program
     {
         /// <summary>
